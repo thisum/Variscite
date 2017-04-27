@@ -11,6 +11,8 @@ stdio.h
 -
 opencv2/opencv.hpp
 -
+gst/gst.h
+-
 
 /usr/local/include/opencv/cxcore.h
 opencv2/core/core_c.h
