@@ -1,10 +1,22 @@
 #include <stdio.h>
 #include <opencv2/opencv.hpp>
+#include <gst/gst.h>
 
 using namespace cv;
 
 int main(int argc, char** argv )
 {
+    GstElement *pipeline, *source, *sink, *encode;
+    GstBus *bus;
+    GstMessage *msg;
+    GstStateChangeReturn ret;
+    
+      gst_init (&argc, &argv);
+
+  source = gst_element_factory_make ("imxv4l2videosrc", "source");
+  encode = gst_element_factory_make("jpegenc", "encode");
+  sink = gst_element_factory_make ("filesink", "sink");
+    
     if ( argc != 2 )
     {
         printf("usage: DisplayImage.out <Image_Path>\n");
