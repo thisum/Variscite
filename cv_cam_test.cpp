@@ -3,7 +3,7 @@
 #include <gst/gst.h>
 
 
-int takeImage()
+int takeImage(int argc, argv )
 {
     
     GstElement *pipeline, *source, *sink, *encode;
@@ -99,7 +99,7 @@ int processImage()
 int main(int argc, char** argv )
 {
 
-    int g = takeImage();
+    int g = takeImage(argc, argv);
     if(g!=-1)
     {
         processImage();
