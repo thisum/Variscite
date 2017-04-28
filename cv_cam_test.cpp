@@ -2,21 +2,6 @@
 #include <opencv2/opencv.hpp>
 #include <gst/gst.h>
 
-int main(int argc, char** argv )
-{
-
-    int g = takeImage();
-    if(g!=-1)
-    {
-        processImage();
-    }
-    else{
-        printf("Taking image failed \n");
-    }
-
-
-}
-
 
 int takeImage()
 {
@@ -109,4 +94,17 @@ int processImage()
     }
 
     return 0;
+}
+
+int main(int argc, char** argv )
+{
+
+    int g = takeImage();
+    if(g!=-1)
+    {
+        processImage();
+    }
+    else{
+        printf("Taking image failed \n");
+    }
 }
