@@ -2,8 +2,9 @@
 #include <opencv2/opencv.hpp>
 #include <gst/gst.h>
 
+using namespace cv;
 
-int takeImage(int argc, int argv )
+int takeImage(int argc, char** argv )
 {
     
     GstElement *pipeline, *source, *sink, *encode;
@@ -91,6 +92,10 @@ int processImage()
     {
         printf("No image data \n");
         return -1;
+    }
+    else
+    {
+	printf("image can be read\n");
     }
 
     return 0;
