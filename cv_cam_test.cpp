@@ -6,10 +6,10 @@ using namespace cv;
 
 struct ROW
 {
-    int minx = 10000;
-    int miny = 10000;
-    int maxx = 0;
-    int maxy = 0;
+    int minx;
+    int miny;
+    int maxx;
+    int maxy;
 };
 
 int takeImage(int argc, char** argv )
@@ -144,6 +144,7 @@ int processImage()
         for(i=0;i<contours.size();i++)
         {
             ROW newRow;
+            newRow.minx = 10000; newRow.miny = 10000; newRow.maxx = 0; newRow.maxy = 0;
             data.push_back(newRow);
             for(int j =0; j< contours[i].size(); j++)
             {
