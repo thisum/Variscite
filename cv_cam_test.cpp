@@ -93,7 +93,7 @@ int takeImage(int argc, char** argv )
 
 int processImage()
 {
-    Mat image = imread( "test.jpeg", 1 );
+    Mat image = imread( "test_1.jpeg", 1 );
 
     if ( !image.data )
     {
