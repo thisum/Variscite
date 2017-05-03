@@ -145,7 +145,6 @@ int processImage()
         {
             ROW newRow;
             newRow.minx = 10000; newRow.miny = 10000; newRow.maxx = 0; newRow.maxy = 0;
-            data.push_back(newRow);
             for(int j =0; j< contours[i].size(); j++)
             {
                 Point p = contours[i][j];
@@ -166,6 +165,7 @@ int processImage()
                     newRow.maxy = p.y;
                 }
             }
+            data.push_back(newRow);
         }
 
         cvtColor(original, frame2, COLOR_BGR2HSV);
@@ -178,7 +178,6 @@ int processImage()
         {
             ROW newRow;
             newRow.minx = 10000; newRow.miny = 10000; newRow.maxx = 0; newRow.maxy = 0;
-            data2.push_back(newRow);
             for(int j =0; j< contours2[i].size(); j++)
             {
                 Point p = contours2[i][j];
@@ -199,6 +198,7 @@ int processImage()
                     newRow.maxy = p.y;
                 }
             }
+            data2.push_back(newRow);
         }
 
         cvtColor(original, frame3, COLOR_BGR2HSV);
@@ -211,7 +211,6 @@ int processImage()
         {
             ROW newRow;
             newRow.minx = 10000; newRow.miny = 10000; newRow.maxx = 0; newRow.maxy = 0;
-            data3.push_back(newRow);
             for(int j =0; j< contours3[i].size(); j++)
             {
                 Point p = contours3[i][j];
@@ -232,6 +231,7 @@ int processImage()
                     newRow.maxy = p.y;
                 }
             }
+            data3.push_back(newRow);
         }
 
         i = 0;
@@ -244,8 +244,10 @@ int processImage()
                         and (data[i].miny <= data2[j].miny) and (data[i].maxy >= data2[j].maxy))
                     or ( (data[i].minx <= data3[j].minx) and (data[i].maxx >= data3[j].maxx)
                          and (data[i].miny <= data3[j].miny) and data[i].maxy >= data3[j].maxy))
-                f = true;
-                break;
+                {
+                    f = true;
+                    break;    
+                }
             }
             if(f)
             {
