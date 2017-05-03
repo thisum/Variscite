@@ -177,6 +177,7 @@ int processImage()
         for(i=0;i<contours2.size();i++)
         {
             ROW newRow;
+            newRow.minx = 10000; newRow.miny = 10000; newRow.maxx = 0; newRow.maxy = 0;
             data2.push_back(newRow);
             for(int j =0; j< contours2[i].size(); j++)
             {
@@ -209,6 +210,7 @@ int processImage()
         for(i=0;i<contours3.size();i++)
         {
             ROW newRow;
+            newRow.minx = 10000; newRow.miny = 10000; newRow.maxx = 0; newRow.maxy = 0;
             data3.push_back(newRow);
             for(int j =0; j< contours3[i].size(); j++)
             {
