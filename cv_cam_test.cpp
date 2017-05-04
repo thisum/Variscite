@@ -265,6 +265,7 @@ int processImage()
         {
             printf("Ring Found: \n");
             printf("Location: Top Left Corner: (%d, %d), Bottom Right Corner: (%d, %d)", data[0].minx, data[0].miny, data[0].maxx, data[0].maxy);
+            rectangle(original, cv::Point(data[0].minx, data[0].miny), cv::Point(data[0].maxx, data[0].maxy), cv::Scalar(255, 255, 255) );
         }
         else if( contours.empty() )
         {
