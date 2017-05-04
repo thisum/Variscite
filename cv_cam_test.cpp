@@ -45,7 +45,7 @@ int takeImage(int argc, char** argv )
 
     g_object_set (source, "device", "/dev/video0", NULL);
     g_object_set (source, "num-buffers", 1, NULL);
-    g_object_set (sink, "location", "test.jpeg", NULL);
+    g_object_set (sink, "location", "image.jpeg", NULL);
 
 
     ret = gst_element_set_state (pipeline, GST_STATE_PLAYING);
@@ -93,7 +93,7 @@ int takeImage(int argc, char** argv )
 
 int processImage()
 {
-    Mat image = imread( "test.jpeg", 1 );
+    Mat image = imread( "image.jpeg", 1 );
 
     if ( !image.data )
     {
@@ -266,7 +266,8 @@ int processImage()
             printf("Ring Found: \n");
             printf("Location: Top Left Corner: (%d, %d), Bottom Right Corner: (%d, %d)", data[0].minx, data[0].miny, data[0].maxx, data[0].maxy);
             rectangle(original, cv::Point(data[0].minx, data[0].miny), cv::Point(data[0].maxx, data[0].maxy), cv::Scalar(255, 255, 255) );
-        }
+            imwrite("image.jpeg", original);
+	}
         else if( contours.empty() )
         {
             printf("No Ring Found");
@@ -275,7 +276,6 @@ int processImage()
         {
             printf("Multiple Rings Found");
         }
-
     }
     else
     {
