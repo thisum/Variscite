@@ -2,7 +2,7 @@
 #include <opencv2/opencv.hpp>
 #include <gst/gst.h>
 #include "gstreamer_file.h"
-#include "video_campture.h"
+#include "video_capture.h"
 
 using namespace cv;
 

@@ -1,7 +1,7 @@
 cmake_minimum_required (VERSION 2.6)
 project (cv_cam_test)
 find_package( OpenCV REQUIRED )
-add_executable (cv_cam_test cv_cam_test.cpp gstreamer_file.cpp gstreamer_file.h video_campture.cpp video_campture.h)
+add_executable (cv_cam_test cv_cam_test.cpp gstreamer_file.cpp gstreamer_file.h video_capture.cpp video_capture.h)
 target_link_libraries( cv_cam_test ${OpenCV_LIBS} )
 include(${CMAKE_ROOT}/Modules/FindPkgConfig.cmake)
 

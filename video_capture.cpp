@@ -3,6 +3,7 @@
 //
 #include <opencv2/opencv.hpp>
 #include <gst/gst.h>
+#include "video_capture.h"
 
 void captureImageFromVideo()
 {
