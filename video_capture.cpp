@@ -6,7 +6,7 @@
 
 void captureImageFromVideo()
 {
-    VideoCapture cap("mfw_v4lsrc ! ffmpegcolorspace ! video/x-raw-rgb ! appsink");
+    VideoCapture cap("imxv4l2videosrc device=\"/dev/video0\" ! autovideosink ");
 
     if(!cap.isOpened())  // check if we succeeded
         printf("camera cannot be opened \n");
