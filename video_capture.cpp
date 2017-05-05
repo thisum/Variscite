@@ -9,7 +9,8 @@ using namespace cv;
 
 void captureImageFromVideo()
 {
-    VideoCapture cap("imxv4l2videosrc device=\"/dev/video0\" ! autovideosink ");
+    printf("starting video");
+    VideoCapture cap("v4l2src ! video/x-raw, framerate=30/1, width=640, height=480, format=RGB ! videoconvert ! appsink");
 
     if(!cap.isOpened())  // check if we succeeded
         printf("camera cannot be opened \n");
