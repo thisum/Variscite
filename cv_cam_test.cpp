@@ -8,6 +8,6 @@ using namespace cv;
 
 int main(int argc, char** argv )
 {
-    captureImage(argc, argv);
-//    captureImageFromVideo();
+//    captureImage(argc, argv);
+    captureImageFromVideo();
 }
