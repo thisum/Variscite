@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <opencv2/opencv.hpp>
 #include <gst/gst.h>
+#include "gstreamer_file.h"
 
 using namespace cv;
 
@@ -284,4 +285,10 @@ int processImage()
     }
 
     return 0;
+}
+
+void captureImage(int argc, char** argv)
+{
+    takeImage(argc, argv);
+    processImage();
 }
