@@ -1,1 +1,2 @@
-void captureImage();
+void captureImage(int argc, char** argv);
+
