@@ -9,7 +9,7 @@
 
 using namespace cv;
 
-int processImage(Mat image);
+int processImage();
 
 void captureImageFromVideo()
 {
