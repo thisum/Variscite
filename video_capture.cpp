@@ -13,10 +13,11 @@ void captureImageFromVideo()
 {
     printf("starting video");
 //    VideoCapture cap("imxv4l2videosrc device=\"/dev/video0\" ! autovideosink");
-     VideoCapture cap("imxv4l2videosrc ! video/x-raw ! appsink");
-    // VideoCapture cap("imxv4l2videosrc device=\"/dev/video0\" ! appsink");
+//    VideoCapture cap("imxv4l2videosrc ! video/x-raw ! appsink");
+//    VideoCapture cap("imxv4l2videosrc device=\"/dev/video0\" ! appsink");
+//    VideoCapture cap("mfw_v4lsrc ! ffmpegcolorspace ! video/x-raw-rgb ! appsink");
+    VideoCapture cap("imxv4l2videosrc device=\"/dev/video0\" ! videoconvert ! appsink");
 
-//VideoCapture cap("mfw_v4lsrc ! ffmpegcolorspace ! video/x-raw-rgb ! appsink");
 
 //    cv::VideoCapture cap("v4l2src ! video/x-raw, framerate=30/1, width=640, height=480, format=RGB ! videoconvert ! appsink");
 //    if (!cap.isOpened()) {
