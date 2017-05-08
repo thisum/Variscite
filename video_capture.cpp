@@ -9,7 +9,15 @@
 
 using namespace cv;
 
-int processImage();
+int processImage(Mat image);
+
+struct ROW
+{
+    int minx;
+    int miny;
+    int maxx;
+    int maxy;
+};
 
 void captureImageFromVideo()
 {
@@ -36,7 +44,7 @@ void captureImageFromVideo()
         if (frame.empty())
             break;
 
-//        processImage(frame);
+        processImage(frame);
 //        char buf[100];
 //        sprintf(buf, "test_%d.jpeg", now);
 //        imwrite(buf, frame);
@@ -46,9 +54,9 @@ void captureImageFromVideo()
 }
 
 
-int processImage()
+int processImage(Mat image)
 {
-    Mat image = imread( "image.jpeg", 1 );
+//    Mat image = imread( "image.jpeg", 1 );
 
     if ( !image.data )
     {
