@@ -10,7 +10,7 @@
 
 using namespace cv;
 
-int processImage();
+int processImage(Mat image);
 
 void captureImageFromVideo()
 {
@@ -37,7 +37,7 @@ void captureImageFromVideo()
         if (frame.empty())
             break;
 
-        processImage(frame);
+//        processImage(frame);
 //        char buf[100];
 //        sprintf(buf, "test_%d.jpeg", now);
 //        imwrite(buf, frame);
