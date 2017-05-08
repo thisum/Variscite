@@ -2,7 +2,6 @@
 // Created by Thisum Buddhika on 5/5/17.
 //
 #include <opencv2/opencv.hpp>
-#include <gst/gst.h>
 #include <stdio.h>
 #include <opencv2/highgui/highgui.hpp>
 #include "video_capture.h"
@@ -37,7 +36,7 @@ void captureImageFromVideo()
         if (frame.empty())
             break;
 
-        processImage(frame);
+//        processImage(frame);
 //        char buf[100];
 //        sprintf(buf, "test_%d.jpeg", now);
 //        imwrite(buf, frame);
@@ -47,9 +46,9 @@ void captureImageFromVideo()
 }
 
 
-int processImage(Mat image)
+int processImage()
 {
-//    Mat image = imread( "image.jpeg", 1 );
+    Mat image = imread( "image.jpeg", 1 );
 
     if ( !image.data )
     {
