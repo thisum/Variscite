@@ -12,7 +12,8 @@ using namespace cv;
 void captureImageFromVideo()
 {
     printf("starting video");
-    VideoCapture cap("imxv4l2videosrc device=\"/dev/video0\" ! autovideosink");
+//    VideoCapture cap("imxv4l2videosrc device=\"/dev/video0\" ! autovideosink");
+     VideoCapture cap("imxv4l2videosrc ! video/x-raw ! appsink");
     // VideoCapture cap("imxv4l2videosrc device=\"/dev/video0\" ! appsink");
 
 //VideoCapture cap("mfw_v4lsrc ! ffmpegcolorspace ! video/x-raw-rgb ! appsink");
