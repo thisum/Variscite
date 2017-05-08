@@ -20,10 +20,10 @@ void captureImageFromVideo()
 
 
 //    cv::VideoCapture cap("v4l2src ! video/x-raw, framerate=30/1, width=640, height=480, format=RGB ! videoconvert ! appsink");
-//    if (!cap.isOpened()) {
-//        printf("=ERR= can't create video capture\n");
-//        return;
-//    }
+    if (!cap.isOpened()) {
+        printf("=ERR= can't create video capture\n");
+        return;
+    }
 //
 //    // second part of sender pipeline
 //    cv::VideoWriter writer;
@@ -34,18 +34,17 @@ void captureImageFromVideo()
 //        return;
 //    }
 //
-//    cv::Mat frame;
-//    int key;
-//
-//    while (true) {
-//
-//        cap >> frame;
-//        if (frame.empty())
-//            break;
-//
-//        imwrite("test_1.jpeg", frame);
-//
-//        writer << frame;
-//        key = cv::waitKey( 30 );
-//    }
+    cv::Mat frame;
+    int key;
+
+    while (true) {
+
+        cap >> frame;
+        if (frame.empty())
+            break;
+
+        imwrite("test_1.jpeg", frame);
+
+        key = cv::waitKey( 30 );
+    }
 }
