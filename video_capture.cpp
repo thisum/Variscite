@@ -39,12 +39,13 @@ void captureImageFromVideo()
 
     while (true) {
 
-        time_t now = time(0);
+//        time_t now = time(0);
         cap >> frame;
         if (frame.empty())
             break;
 
         processImage(frame);
+	//time_t now = time(0);
 //        char buf[100];
 //        sprintf(buf, "test_%d.jpeg", now);
 //        imwrite(buf, frame);
@@ -230,7 +231,11 @@ int processImage(Mat image)
             printf("Location: Top Left Corner: (%d, %d), Bottom Right Corner: (%d, %d)", data[0].minx, data[0].miny, data[0].maxx, data[0].maxy);
             rectangle(original, cv::Point(data[0].minx, data[0].miny), cv::Point(data[0].maxx, data[0].maxy), cv::Scalar(255, 255, 255) );
             line(original, cv::Point(data[0].minx, data[0].miny), cv::Point(data[0].maxx, data[0].maxy), cv::Scalar(255, 255, 255) );
-            imwrite("image.jpeg", original);
+           
+            time_t now = time(0);
+            char img_name[50];
+            sprintf(img_name, "image_%d.jpeg", now);
+	    imwrite(img_name, original);
         }
         else if( contours.empty() )
         {
