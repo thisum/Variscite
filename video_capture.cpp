@@ -26,7 +26,7 @@ void captureImageFromVideo()
 //    VideoCapture cap("imxv4l2videosrc ! video/x-raw ! appsink");
 //    VideoCapture cap("imxv4l2videosrc device=\"/dev/video0\" ! appsink");
 //    VideoCapture cap("mfw_v4lsrc ! ffmpegcolorspace ! video/x-raw-rgb ! appsink");
-    VideoCapture cap("imxv4l2videosrc device=\"/dev/video0\" ! videoconvert ! appsink");
+    VideoCapture cap("imxv4l2videosrc mx-capture-mode=5 ! videoconvert ! appsink");
 
 
     if (!cap.isOpened()) {
